@@ -1,0 +1,91 @@
+package arreglo.tienda.modelo;
+
+public class Juego {
+    private String nombre;
+    private String categoria;
+    private int tamanio;
+    private double precio;
+    private int licenciasDisponibles;
+    private int licenciasVendidas;
+
+    public Juego(String nombre, String categoria, int tamanio, double precio, int licenciasDisponibles) {
+        this.nombre = nombre;
+        this.categoria = categoria;
+        this.tamanio = tamanio;
+        this.precio = precio;
+        this.licenciasDisponibles = licenciasDisponibles;
+        licenciasVendidas=0;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getCategoria() {
+        return categoria;
+    }
+
+    public int getTamanio() {
+        return tamanio;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public int getLicenciasDisponibles() {
+        return licenciasDisponibles;
+    }
+
+    public int getLicenciasVendidas() {
+        return licenciasVendidas;
+    }
+
+    public void setNombre(String nombre) {
+        if(nombre!=null && !nombre.trim().isEmpty()) //en el empty se necesita por trim() porque le quita los espacio vacios, si blamk no se necesita
+            this.nombre = nombre;
+    }
+
+    // if (idLuz != null && !idLuz.isBlank()) {
+    //            this.idLuz = idLuz;
+    //        } else {
+    //            Scanner scanner = new Scanner(System.in);
+    //            while (idLuz == null || idLuz.isBlank()) {
+    //                System.out.println("ID de luz inválido, ingrese un ID válido:");
+    //                idLuz = scanner.next();
+    //            }
+    //            this.idLuz = idLuz;
+    //        }
+
+    public void setCategoria(String categoria) {
+        if(categoria!=null && !categoria.trim().isEmpty())
+            this.categoria = categoria;
+    }
+
+    public void setTamanio(int tamanio) {
+        if(tamanio>0)
+            this.tamanio = tamanio;
+    }
+
+    public void setPrecio(double precio) {
+        if(precio>0)
+            this.precio= precio;
+    }
+
+    public boolean comprar(int cantidad){
+        if(cantidad>0){
+            licenciasDisponibles+=cantidad;
+        return true;
+        }
+        return false;
+    }
+
+    public boolean vender(int cantidad){
+        if(cantidad>0 && cantidad<=licenciasDisponibles){
+            licenciasDisponibles-=cantidad;
+            licenciasVendidas+=cantidad;
+            return true;
+        }
+        return false;
+    }
+}
