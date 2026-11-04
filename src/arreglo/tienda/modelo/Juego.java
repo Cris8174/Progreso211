@@ -88,4 +88,14 @@ public class Juego {
         }
         return false;
     }
+
+    //if(this.nombre==nombre) compara referencias
+    //if(this.nombre.equals(nombre)) compara contenido
+
+    @Override
+    public String toString(){
+        return"Juego{"+
+                "nombres="+nombre+'\'+
+                ",categoria='"+ categoria +' \''
+    }
 }
