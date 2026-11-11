@@ -13,7 +13,8 @@ public class Juego {
         this.categoria = categoria;
         this.tamano = tamano;
         this.precio = precio;
-        this.licenciasDisponibles = licenciasDisponibles;
+        if (licenciasDisponibles >= 0)
+            this.licenciasDisponibles = licenciasDisponibles;
         licenciasVendidas = 0;
     }
 
