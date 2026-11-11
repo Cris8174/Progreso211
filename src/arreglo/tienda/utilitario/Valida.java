@@ -1,7 +1,5 @@
 package arreglo.tienda.utilitario;
 
-import arreglo.tienda.modelo.AppStore;
-
 import java.util.Scanner;
 
 public class Valida {
